@@ -544,7 +544,6 @@ class ReactSortableTree extends Component {
           toggleChildrenVisibility={this.toggleChildrenVisibility}
           {...sharedProps}
           {...nodeProps}
-          keyEnter={this.props.onKeyEnter}
         />
       </TreeNodeRenderer>
     );
@@ -826,9 +825,6 @@ ReactSortableTree.propTypes = {
 
   // Called to track between dropped and dragging
   onDragStateChanged: PropTypes.func,
-
-    // Called to handle key enter
-  onKeyEnter: PropTypes.func,
 };
 
 ReactSortableTree.defaultProps = {
@@ -858,7 +854,6 @@ ReactSortableTree.defaultProps = {
   style: {},
   theme: {},
   onDragStateChanged: () => {},
-  onKeyEnter: () => {},
 };
 
 ReactSortableTree.contextTypes = {
