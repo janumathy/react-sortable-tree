@@ -1660,7 +1660,9 @@
                         isSearchFocus: isSearchFocus,
                         canDrag: rowCanDrag,
                         toggleChildrenVisibility: this.toggleChildrenVisibility
-                    }, sharedProps, nodeProps)));
+                    }, sharedProps, nodeProps, {
+                        keyEnter: this.props.onKeyEnter
+                    })));
                 }
             }, {
                 key: "render",
@@ -1860,7 +1862,9 @@
             onVisibilityToggle: _propTypes2.default.func,
             dndType: _propTypes2.default.string,
             // Called to track between dropped and dragging
-            onDragStateChanged: _propTypes2.default.func
+            onDragStateChanged: _propTypes2.default.func,
+            // Called to handle key enter
+            onKeyEnter: _propTypes2.default.func
         }, ReactSortableTree.defaultProps = {
             canDrag: !0,
             canDrop: null,
@@ -1887,7 +1891,8 @@
             slideRegionSize: null,
             style: {},
             theme: {},
-            onDragStateChanged: function() {}
+            onDragStateChanged: function() {},
+            onKeyEnter: function() {}
         }, ReactSortableTree.contextTypes = {
             dragDropManager: _propTypes2.default.shape({})
         }, // Export the tree component without the react-dnd DragDropContext,
